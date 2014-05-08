@@ -1,16 +1,38 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
+require 'yaml'
+config_dir = File.dirname(File.expand_path(__FILE__))
+config_dir = "#{config_dir}/.config"
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+data = YAML::load_file("#{config_dir}/config.yaml")
+data = data['vagrant']
+vm   = data['vm']
+
+Vagrant.configure("2") do |config|
+
+    if vm['boot_timeout'].to_i >= 0
+        config.vm.boot_timeout = "#{vm['boot_timeout']}".to_i
+    end
+
+    config.vm.box = "#{vm['box']}"
+
+    if vm['box_check_update'].nil?
+        config.vm.box_check_update = "#{vm['box_check_update']}"
+    end
+
+end
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+# VAGRANTFILE_API_VERSION = "2"
+
+# Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "base"
+  # config.vm.box = "ubuntu/trusty32"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -119,4 +141,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
-end
+# end

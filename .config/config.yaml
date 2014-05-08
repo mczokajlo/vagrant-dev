@@ -1,0 +1,64 @@
+vagrant:
+    vm:
+        # boot_timeout : 300
+        box: 'ubuntu/trusty32'
+        # box_check_update: true
+        # 
+        # box_download_checksum: null
+        # box_download_checksum_type: null
+        # box_download_client_cert: null
+        # box_download_insecure: false
+        # box_url: null
+        # box_version: '>= 0'
+        # graceful_halt_timeout: 60
+        # guest: ':linux'
+        # hostname: null
+        # post_up_message: null
+        # network:
+        #     private:
+        #         dhcp:
+        #             type: 'dhcp'
+        #             auto_config: false
+        #         static:
+        #             ip: '192.168.50.4'
+        #             auto_config: false
+        #     public:
+        #         dhcp:
+        #             type: 'dhcp'
+        #             auto_config: false
+        #             bridge: null
+        #         static:
+        #             ip: '192.168.50.4'
+        #             auto_config: false
+        #             bridge: null
+        #     forwarded_port:
+        #         80-8080-tcp:
+        #             guest: 80
+        #             guest_ip: ''
+        #             host: 8080
+        #             host_ip: ''
+        #             protocol:
+        #                 - 'tcp'
+        #                 - 'udp'
+        #             auto_correct: true
+        # provider:
+        #     virtualbox:
+        #         natdnshostresolver1: on
+        #         memory: '512'
+        #         name: null
+        #     # docker:
+        # synced_folder:
+        #     key1:
+        #         source: ./
+        #         target: /var/www
+        #         create: false
+        #         disabled: false
+        #         group: ''
+        #         mount_options: []
+        #         owner: ''
+        #         nfs: 'false'
+        #         type: ''
+        # usable_port_range:
+        #     2200..2250:
+        #         from: 2200
+        #         to: 2250
