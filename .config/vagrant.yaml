@@ -1,0 +1,91 @@
+vagrant:
+    # require_version: '>= 1.6.0'
+    vm:
+        # boot_timeout : 300
+        box: 'ubuntu/trusty32'
+        # box_url: ''
+        # box_check_update: true
+        # box_download_checksum: ''
+        # box_download_checksum_type: 'md5' # md5, sha1, sha256
+        # box_download_client_cert: ''
+        # box_download_insecure: false
+        # box_version: '>= 0'
+        # graceful_halt_timeout: 60
+        # guest: ':linux'
+        # hostname: null
+        # post_up_message: null
+        # usable_port_range:
+        #     2200..2250:
+        #         from: 2200
+        #         to: 2250
+        # network:
+        #     private:
+        #         dhcp:
+        #             type: 'dhcp'
+        #             auto_config: true
+        #         static:
+        #             ip: '192.168.56.101'
+        #             auto_config: true
+        #     public:
+        #         dhcp:
+        #             type: 'dhcp'
+        #             auto_config: true
+        #             bridge: 'eth0'
+        #         static:
+        #             ip: '192.168.56.102'
+        #             auto_config: true
+        #             bridge: 'eth0'
+        #     forwarded_port:
+        #         80-8080-tcp:
+        #             guest: 2003
+        #             guest_ip: ''
+        #             host: 12003
+        #             host_ip: ''
+        #             protocol:
+        #                 - 'tcp'
+        #                 - 'udp'
+        #             auto_correct: true
+        provider:
+            virtualbox:
+                modifyvm:
+                    natdnshostresolver1: 'on'
+                    memory: '512'
+        #     # docker:
+        # synced_folder:
+        #     key1:
+        #         source: ./
+        #         target: /var/www
+        #         create: false
+        #         disabled: false
+        #         group: 'www-data'
+        #         mount_options: []
+        #         owner: 'www-data'
+        #         type: null
+        #         nfs_udp: true
+        #         nfs_version: 3
+        #         rsync__args:
+        #             - '--verbose'
+        #             - '--archive'
+        #             - '--delete'
+        #             - '-z'
+        #         rsync__auto: true
+        #         rsync__exclude:
+        #             - '.vagrant/'
+        #             - '.git/'
+        #         smb_host: ''
+        #         smb_password: ''
+        #         smb_username: ''
+    # ssh:
+    #     username: 'vagrant'
+    #     password: ''
+    #     host: ''
+    #     port: 22
+    #     guest_port:
+    #     private_key_path: ''
+    #     forward_agent: false
+    #     forward_x11: false
+    #     insert_key: true
+    #     proxy_command: ''
+    #     shell: 'bash -l'
+    vagrant:
+        host: detect
