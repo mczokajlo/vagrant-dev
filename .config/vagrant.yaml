@@ -1,5 +1,5 @@
 vagrant:
-    require_version: '>= 1.6.0'
+    # require_version: '>= 1.6.0'
     vm:
         # boot_timeout : 300
         box: 'ubuntu/trusty32'
@@ -45,11 +45,11 @@ vagrant:
         #                 - 'tcp'
         #                 - 'udp'
         #             auto_correct: true
-        # provider:
-        #     virtualbox:
-        #         modifyvm:
-        #             natdnshostresolver1: 'on'
-        #             memory: '512'
+        provider:
+            virtualbox:
+                modifyvm:
+                    natdnshostresolver1: 'on'
+                    memory: '512'
         #     # docker:
         # synced_folder:
         #     key1:
@@ -87,5 +87,5 @@ vagrant:
     #     insert_key: true
     #     proxy_command: ''
     #     shell: 'bash -l'
-    # vagrant:
-        # host: ':detect'
+    vagrant:
+        host: detect
