@@ -1,13 +1,20 @@
 vagrant:
     require_version: '>= 1.6.0'
     vm:
-        box: 'saucy32'
+        box: 'trusty64'
         hostname: 'vagrant-dev.local'
         provider:
             virtualbox:
                 modifyvm:
                     natdnshostresolver1: 'on'
                     memory: '512'
+        synced_folder:
+            key1:
+                source: ./../puppet-dev
+                target: /var/www/puppet-dev
+                create: true
+                group: 'root'
+                owner: 'root'
 # vagrant:
     # require_version: '>= 1.6.0'
     # vm:
